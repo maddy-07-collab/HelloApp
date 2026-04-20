@@ -1,26 +1,13 @@
-public class HelloApp {
-     public static void main(String[] args) {
+public class HelloApp {    public static void main(String[] args) {
 
-        String name;
+        String names = "World";
 
-        // Default when no arguments
-        if (args.length == 0) {
-            name = "World";
-        } 
-        
-        // Enhanced for loop + substring cleanup
-        else {
-            StringBuilder nameBuilder = new StringBuilder();
-
-            for (String n : args) {
-                nameBuilder.append(n).append(", ");
-            }
-
-            // Remove trailing comma and space
-            name = nameBuilder.substring(0, nameBuilder.length() - 2);
+        // If arguments exist, join them
+        if (args.length > 0) {
+            names = String.join(", ", args);
         }
 
-        System.out.println("Hello, " + name + "!");
+        System.out.println("Hello, " + names + "!");
     }
     
 }
